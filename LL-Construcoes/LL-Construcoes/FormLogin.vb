@@ -2,6 +2,9 @@
 Imports System.IO
 
 Public Class frmLogin
+    Dim login As String
+    Dim senha As String
+
     Private Sub X_Click(sender As Object, e As EventArgs) Handles X.Click
         Application.Exit()
     End Sub
@@ -16,13 +19,15 @@ Public Class frmLogin
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_Entrar.Click
+        login = txtuser.Text()
+        senha = txtpassword.Text()
         abrir()
         Try
             Dim cmdUser As New OleDbCommand
             Dim reader As OleDbDataReader
             Dim sql As String
 
-            sql = "SELECT usuario_Func, senha_Func, cargo_Func FROM Funcionarios WHERE usuario_Func = '" & txtuser.Text & "' AND senha_Func = '" & txtpassword.Text & "'"
+            sql = "SELECT usuario_Func, senha_Func, cargo_Func FROM Funcionarios WHERE usuario_Func = '" & login & "' AND senha_Func = '" & senha & "'"
             cmdUser = New OleDbCommand(sql, con)
             reader = cmdUser.ExecuteReader
 
@@ -31,12 +36,9 @@ Public Class frmLogin
                 txtuser.Text = "Usuário"
                 txtpassword.Text = "Senha"
                 If permissao = "Gerente" Then
-                    frmMenu.Show()
-                    Me.Visible = False
+                    PermissaoAdmin()
                 Else
-                    frmMenu.Show()
-                    Me.Visible = False
-                    frmMenu.Panel_Func.Visible = False
+                    PermissaoVendedor()
                 End If
             Else
                 MsgBox("Dados Incorretos!")
@@ -76,13 +78,15 @@ Public Class frmLogin
 
     Private Sub frmLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Enter Then
+            login = txtuser.Text()
+            senha = txtpassword.Text()
             abrir()
             Try
                 Dim cmdUser As New OleDbCommand
                 Dim reader As OleDbDataReader
                 Dim sql As String
 
-                sql = "SELECT * FROM Funcionarios WHERE usuario_Func = '" & txtuser.Text & "' AND senha_Func = '" & txtpassword.Text & "'"
+                sql = "SELECT usuario_Func, senha_Func, cargo_Func FROM Funcionarios WHERE usuario_Func = '" & login & "' AND senha_Func = '" & senha & "'"
                 cmdUser = New OleDbCommand(sql, con)
                 reader = cmdUser.ExecuteReader
 
@@ -90,13 +94,13 @@ Public Class frmLogin
                     permissao = reader.GetString(2)
                     txtuser.Text = "Usuário"
                     txtpassword.Text = "Senha"
+
                     If permissao = "Gerente" Then
-                        frmMenu.Show()
-                        Me.Visible = False
+                        PermissaoAdmin()
+                    ElseIf permissao = "Funcionario" Then
+                        PermissaoVendedor()
                     Else
-                        frmMenu.Show()
-                        Me.Visible = False
-                        frmMenu.Panel_Func.Visible = False
+                        MsgBox("Você não tem permissão suficiente para logar no sistema")
                     End If
                 Else
                     MsgBox("Dados Incorretos!")
@@ -108,5 +112,37 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtuser.Select()
+    End Sub
+
+    Sub PermissaoAdmin()
+        frmMenu.Show()
+        Me.Visible = False
+        BuscarNome()
+    End Sub
+
+    Sub PermissaoVendedor()
+        frmMenu.Show()
+        Me.Visible = False
+        frmMenu.Panel_Func.Visible = False
+        BuscarNome()
+    End Sub
+
+    Sub BuscarNome()
+        Dim cmdUser As New OleDbCommand
+        Dim reader As OleDbDataReader
+        Dim sql As String
+
+        fechar()
+        abrir()
+        Try
+            sql = "SELECT nome_Func FROM Funcionarios WHERE usuario_Func = '" & login & "' AND senha_Func = '" & senha & "'"
+            cmdUser = New OleDbCommand(sql, con)
+            reader = cmdUser.ExecuteReader
+            reader.Read()
+            frmMenu.LabelNomeFunc.Text = reader.GetString(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString())
+        End Try
+        fechar()
     End Sub
 End Class

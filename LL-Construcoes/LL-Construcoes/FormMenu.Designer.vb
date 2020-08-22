@@ -42,6 +42,7 @@ Partial Class frmMenu
         Me.Panel_Backup = New System.Windows.Forms.Panel()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelNomeFunc = New System.Windows.Forms.Label()
         Me.Panel_Cliente.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Fornec.SuspendLayout()
@@ -275,11 +276,21 @@ Partial Class frmMenu
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Backup"
         '
+        'LabelNomeFunc
+        '
+        Me.LabelNomeFunc.AutoSize = True
+        Me.LabelNomeFunc.Location = New System.Drawing.Point(21, 358)
+        Me.LabelNomeFunc.Name = "LabelNomeFunc"
+        Me.LabelNomeFunc.Size = New System.Drawing.Size(10, 13)
+        Me.LabelNomeFunc.TabIndex = 19
+        Me.LabelNomeFunc.Text = "."
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(781, 356)
+        Me.ClientSize = New System.Drawing.Size(781, 413)
+        Me.Controls.Add(Me.LabelNomeFunc)
         Me.Controls.Add(Me.Panel_Backup)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel_Carrinho)
@@ -311,6 +322,7 @@ Partial Class frmMenu
         Me.Panel_Backup.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As Label
@@ -333,4 +345,5 @@ Partial Class frmMenu
     Friend WithEvents Panel_Backup As Panel
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents LabelNomeFunc As Label
 End Class
