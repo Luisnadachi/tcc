@@ -46,6 +46,7 @@ Partial Class frmMenu
         Me.PanelRestaurarBackup = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.FotoFuncPictureBox = New System.Windows.Forms.PictureBox()
         Me.Panel_Cliente.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Fornec.SuspendLayout()
@@ -61,6 +62,7 @@ Partial Class frmMenu
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelRestaurarBackup.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FotoFuncPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -80,7 +82,7 @@ Partial Class frmMenu
         Me.Panel_Cliente.Controls.Add(Me.PictureBox1)
         Me.Panel_Cliente.Controls.Add(Me.Label1)
         Me.Panel_Cliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Cliente.Location = New System.Drawing.Point(12, 38)
+        Me.Panel_Cliente.Location = New System.Drawing.Point(268, 38)
         Me.Panel_Cliente.Name = "Panel_Cliente"
         Me.Panel_Cliente.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Cliente.TabIndex = 12
@@ -112,7 +114,7 @@ Partial Class frmMenu
         Me.Panel_Fornec.Controls.Add(Me.PictureBox4)
         Me.Panel_Fornec.Controls.Add(Me.Label2)
         Me.Panel_Fornec.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Fornec.Location = New System.Drawing.Point(268, 38)
+        Me.Panel_Fornec.Location = New System.Drawing.Point(268, 194)
         Me.Panel_Fornec.Name = "Panel_Fornec"
         Me.Panel_Fornec.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Fornec.TabIndex = 13
@@ -144,7 +146,7 @@ Partial Class frmMenu
         Me.Panel_Produto.Controls.Add(Me.PictureBox2)
         Me.Panel_Produto.Controls.Add(Me.Label4)
         Me.Panel_Produto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Produto.Location = New System.Drawing.Point(524, 38)
+        Me.Panel_Produto.Location = New System.Drawing.Point(524, 194)
         Me.Panel_Produto.Name = "Panel_Produto"
         Me.Panel_Produto.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Produto.TabIndex = 15
@@ -176,7 +178,7 @@ Partial Class frmMenu
         Me.Panel_Func.Controls.Add(Me.PictureBox3)
         Me.Panel_Func.Controls.Add(Me.Label5)
         Me.Panel_Func.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Func.Location = New System.Drawing.Point(12, 194)
+        Me.Panel_Func.Location = New System.Drawing.Point(524, 38)
         Me.Panel_Func.Name = "Panel_Func"
         Me.Panel_Func.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Func.TabIndex = 16
@@ -208,7 +210,7 @@ Partial Class frmMenu
         Me.Panel_Carrinho.Controls.Add(Me.PictureBox6)
         Me.Panel_Carrinho.Controls.Add(Me.Label6)
         Me.Panel_Carrinho.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Carrinho.Location = New System.Drawing.Point(268, 194)
+        Me.Panel_Carrinho.Location = New System.Drawing.Point(524, 350)
         Me.Panel_Carrinho.Name = "Panel_Carrinho"
         Me.Panel_Carrinho.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Carrinho.TabIndex = 17
@@ -255,7 +257,7 @@ Partial Class frmMenu
         Me.Panel_Backup.Controls.Add(Me.PictureBox5)
         Me.Panel_Backup.Controls.Add(Me.Label3)
         Me.Panel_Backup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Backup.Location = New System.Drawing.Point(524, 194)
+        Me.Panel_Backup.Location = New System.Drawing.Point(268, 506)
         Me.Panel_Backup.Name = "Panel_Backup"
         Me.Panel_Backup.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Backup.TabIndex = 17
@@ -283,12 +285,12 @@ Partial Class frmMenu
         '
         'LabelNomeFunc
         '
-        Me.LabelNomeFunc.AutoSize = True
-        Me.LabelNomeFunc.Location = New System.Drawing.Point(21, 358)
+        Me.LabelNomeFunc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNomeFunc.Location = New System.Drawing.Point(12, 144)
         Me.LabelNomeFunc.Name = "LabelNomeFunc"
-        Me.LabelNomeFunc.Size = New System.Drawing.Size(10, 13)
+        Me.LabelNomeFunc.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LabelNomeFunc.Size = New System.Drawing.Size(125, 25)
         Me.LabelNomeFunc.TabIndex = 19
-        Me.LabelNomeFunc.Text = "."
         '
         'PanelRestaurarBackup
         '
@@ -296,7 +298,7 @@ Partial Class frmMenu
         Me.PanelRestaurarBackup.Controls.Add(Me.PictureBox7)
         Me.PanelRestaurarBackup.Controls.Add(Me.Label7)
         Me.PanelRestaurarBackup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PanelRestaurarBackup.Location = New System.Drawing.Point(524, 350)
+        Me.PanelRestaurarBackup.Location = New System.Drawing.Point(524, 506)
         Me.PanelRestaurarBackup.Name = "PanelRestaurarBackup"
         Me.PanelRestaurarBackup.Size = New System.Drawing.Size(250, 150)
         Me.PanelRestaurarBackup.TabIndex = 18
@@ -322,11 +324,20 @@ Partial Class frmMenu
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Restaurar Backup"
         '
+        'FotoFuncPictureBox
+        '
+        Me.FotoFuncPictureBox.Location = New System.Drawing.Point(16, 38)
+        Me.FotoFuncPictureBox.Name = "FotoFuncPictureBox"
+        Me.FotoFuncPictureBox.Size = New System.Drawing.Size(114, 103)
+        Me.FotoFuncPictureBox.TabIndex = 20
+        Me.FotoFuncPictureBox.TabStop = False
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(781, 505)
+        Me.ClientSize = New System.Drawing.Size(781, 662)
+        Me.Controls.Add(Me.FotoFuncPictureBox)
         Me.Controls.Add(Me.PanelRestaurarBackup)
         Me.Controls.Add(Me.LabelNomeFunc)
         Me.Controls.Add(Me.Panel_Backup)
@@ -362,8 +373,8 @@ Partial Class frmMenu
         Me.PanelRestaurarBackup.ResumeLayout(False)
         Me.PanelRestaurarBackup.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FotoFuncPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As Label
@@ -390,4 +401,5 @@ Partial Class frmMenu
     Friend WithEvents PanelRestaurarBackup As Panel
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents FotoFuncPictureBox As PictureBox
 End Class

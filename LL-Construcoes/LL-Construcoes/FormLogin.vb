@@ -4,6 +4,7 @@ Imports System.IO
 Public Class frmLogin
     Dim login As String
     Dim senha As String
+    Dim fotoFuncionario As Bitmap
 
     Private Sub X_Click(sender As Object, e As EventArgs) Handles X.Click
         Application.Exit()
@@ -117,6 +118,7 @@ Public Class frmLogin
     Sub PermissaoAdmin()
         frmMenu.Show()
         Me.Visible = False
+        CarregarFoto()
         BuscarNome()
     End Sub
 
@@ -124,6 +126,7 @@ Public Class frmLogin
         frmMenu.Show()
         Me.Visible = False
         frmMenu.Panel_Func.Visible = False
+        CarregarFoto()
         BuscarNome()
     End Sub
 
@@ -144,5 +147,30 @@ Public Class frmLogin
             MsgBox(ex.ToString())
         End Try
         fechar()
+    End Sub
+
+    Sub CarregarFoto()
+        Dim cmdUser As New OleDbCommand
+        Dim reader As OleDbDataReader
+        Dim sql As String
+
+        Try
+            sql = "SELECT foto_Func FROM Funcionarios WHERE usuario_Func = '" & login & "' AND senha_Func = '" & senha & "'"
+            cmdUser = New OleDbCommand(sql, con)
+            reader = cmdUser.ExecuteReader
+
+            If reader.HasRows Then
+                reader.Read()
+
+                Dim blob As Byte() = DirectCast(reader.Item("foto_Func"), Byte())
+                Using ms = New MemoryStream(blob)
+                    fotoFuncionario = New Bitmap(ms)
+                End Using
+                frmMenu.FotoFuncPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+                frmMenu.FotoFuncPictureBox.Image = fotoFuncionario
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
