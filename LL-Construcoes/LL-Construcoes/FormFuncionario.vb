@@ -67,6 +67,7 @@ Public Class frmFuncionario
     End Sub
 
     Sub limpar()
+        TextBoxIdFunc.Text = ""
         TextBoxNomeFunc.Text = ""
         MaskedTextBoxNascimentoFunc.Text = ""
         MaskedTextBoxCPFFunc.Text = ""

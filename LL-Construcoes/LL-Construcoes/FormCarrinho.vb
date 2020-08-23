@@ -2,6 +2,7 @@
 Imports System.IO
 
 Public Class frmCarrinho
+    Dim idFuncVenda As Integer
 
     Private Sub valorInicial()
 
@@ -80,6 +81,8 @@ Public Class frmCarrinho
     Private Sub btn_Finalizar_Click(sender As Object, e As EventArgs) Handles btn_Finalizar.Click
         PanelSelect.Location = New Point(0, 266)
         PanelSelect.Visible = True
+        BuscarIdFunc()
+        AddVendaFunc()
     End Sub
 
     Private Sub btn_Cancelar_Click(sender As Object, e As EventArgs) Handles btn_Cancelar.Click
@@ -236,5 +239,53 @@ Public Class frmCarrinho
         DgvProdutosVenda.Rows.RemoveAt(DgvProdutosVenda.CurrentRow.Index)
         SomarValor()
         adicionarestoque()
+    End Sub
+
+    Sub BuscarIdFunc()
+        Dim cmdUser As New OleDbCommand
+        Dim reader As OleDbDataReader
+        Dim sql As String
+
+        Try
+            Dim nomePesquisa As String = frmMenu.LabelNomeFunc.Text
+            fechar()
+            abrir()
+
+            sql = "SELECT id_Func FROM Funcionarios WHERE nome_Func = '" & nomePesquisa & "'"
+            cmdUser = New OleDbCommand(sql, con)
+            reader = cmdUser.ExecuteReader
+            reader.Read()
+            idFuncVenda = reader.GetInt32(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Public Sub AddVendaFunc()
+        Dim cmd As OleDbCommand
+        Dim sql As String
+
+        Try
+            abrir()
+            Dim qtde As Integer = 1
+            Dim qtd_venda_Func = ("SELECT vendas_Func FROM Funcionarios WHERE id_Func =") & idFuncVenda
+
+            cmd = New OleDbCommand(qtd_venda_Func, con)
+            qtd_venda_Func = CInt(cmd.ExecuteScalar)
+
+            Dim addestoque As Integer
+            Dim autcodfunc = idFuncVenda
+
+            addestoque = qtd_venda_Func + qtde
+
+            sql = "UPDATE Funcionarios SET vendas_Func = '" & Val(addestoque) & "' WHERE id_Func = " & Val(autcodfunc)
+            cmd = New OleDbCommand(sql, con)
+            cmd.ExecuteNonQuery()
+        Finally
+            fechar()
+            cmd = Nothing
+        End Try
     End Sub
 End Class
