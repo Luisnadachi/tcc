@@ -83,4 +83,32 @@ Public Class frmMenu
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub PanelRestaurarBackup_MouseClick(sender As Object, e As MouseEventArgs) Handles PanelRestaurarBackup.MouseClick
+        Try
+            Dim fdb As New FolderBrowserDialog
+            If fdb.ShowDialog() = vbOK Then
+                File.Delete("LLConstrucoes.mdb")
+                File.Copy(fdb.SelectedPath & "\LLConstrucoes.mdb", "LLConstrucoes.mdb")
+                MsgBox("Backup feito com sucesso!")
+                Application.Restart()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Try
+            Dim fdb As New FolderBrowserDialog
+            If fdb.ShowDialog() = vbOK Then
+                File.Delete("LLConstrucoes.mdb")
+                File.Copy(fdb.SelectedPath & "\LLConstrucoes.mdb", "LLConstrucoes.mdb")
+                MsgBox("Backup feito com sucesso!")
+                Application.Restart()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
