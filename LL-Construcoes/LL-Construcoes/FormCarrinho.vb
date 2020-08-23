@@ -3,6 +3,7 @@ Imports System.IO
 
 Public Class frmCarrinho
     Dim idFuncVenda As Integer
+    Public estoqueAtual As Integer
 
     Private Sub valorInicial()
 
@@ -83,13 +84,14 @@ Public Class frmCarrinho
         PanelSelect.Visible = True
         BuscarIdFunc()
         AddVendaFunc()
+        MsgBox("Venda Finalizada!")
     End Sub
 
     Private Sub btn_Cancelar_Click(sender As Object, e As EventArgs) Handles btn_Cancelar.Click
         PanelSelect.Location = New Point(0, 351)
         PanelSelect.Visible = True
         desabilitar()
-        adicionarestoque()
+        AtualizarEstoqueVendasCancelada()
         limpar()
         btn_Finalizar.Enabled = False
         btn_Cancelar.Enabled = False
@@ -183,7 +185,7 @@ Public Class frmCarrinho
         End If
     End Sub
 
-    Public Sub debitaestoque()
+    Public Sub debitaestoque() 'Debita do estoque a quantidade de produtos escolhida na compra
         Dim cmd As OleDbCommand
         Dim sql As String
 
@@ -209,39 +211,14 @@ Public Class frmCarrinho
         End Try
     End Sub
 
-    Public Sub adicionarestoque() 'Em Desenvolvimento'
-        Dim cmd As OleDbCommand
-        Dim sql As String
-
-        Try
-            abrir()
-            Dim qtde As Integer
-            Dim qtd_mais_estoque = ("SELECT estoque_Produto FROM Produtos WHERE id_Produto =") & idproduto
-
-            cmd = New OleDbCommand(qtd_mais_estoque, con)
-            qtd_mais_estoque = CInt(cmd.ExecuteScalar)
-
-            Dim addestoque As Integer
-            Dim autcodprod = tbCodProduto.Text
-            qtde = DgvProdutosVenda.CurrentRow.Cells(1).Value
-            addestoque = qtd_mais_estoque + qtde
-
-            sql = "UPDATE Produtos SET estoque_Produto = '" & Val(addestoque) & "' WHERE id_produto = " & Val(autcodprod)
-            cmd = New OleDbCommand(sql, con)
-            cmd.ExecuteNonQuery()
-        Finally
-            fechar()
-            cmd = Nothing
-        End Try
-    End Sub
 
     Private Sub DgvProdutosVenda_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DgvProdutosVenda.RowHeaderMouseClick
         DgvProdutosVenda.Rows.RemoveAt(DgvProdutosVenda.CurrentRow.Index)
         SomarValor()
-        adicionarestoque()
+
     End Sub
 
-    Sub BuscarIdFunc()
+    Sub BuscarIdFunc() 'Busca o ID do funcionário
         Dim cmdUser As New OleDbCommand
         Dim reader As OleDbDataReader
         Dim sql As String
@@ -263,7 +240,7 @@ Public Class frmCarrinho
         End Try
     End Sub
 
-    Public Sub AddVendaFunc()
+    Sub AddVendaFunc() 'Adiciona venda para o funcionário
         Dim cmd As OleDbCommand
         Dim sql As String
 
@@ -286,6 +263,108 @@ Public Class frmCarrinho
         Finally
             fechar()
             cmd = Nothing
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+
+    Sub BuscarEstoqueAtual() 'Busca o estoque atual
+        Dim cmdUser As New OleDbCommand
+        Dim reader As OleDbDataReader
+        Dim sql As String
+
+        Try
+            fechar()
+            abrir()
+
+            sql = "SELECT estoque_Produto FROM Produtos WHERE id_Produto = " & tbCodProduto.Text
+            cmdUser = New OleDbCommand(sql, con)
+            reader = cmdUser.ExecuteReader
+            reader.Read()
+            estoqueAtual = reader.GetString(0)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Sub BuscarEstoqueVendaCancelada(nome As String) 'Busca o estoque 
+        Dim cmdUser As New OleDbCommand
+        Dim reader As OleDbDataReader
+        Dim sql As String
+
+        Try
+            fechar()
+            abrir()
+
+            sql = "SELECT estoque_Produto FROM Produtos WHERE nome_Produto = '" & nome & "'"
+
+            cmdUser = New OleDbCommand(sql, con)
+            reader = cmdUser.ExecuteReader
+            reader.Read()
+            estoqueAtual = reader.GetString(0)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Sub AtualizarEstoqueVendasCancelada() 'Atualiza o estoque quando a venda é cancelada
+        Dim nome As String
+        Dim qntProd As Integer
+        Dim cmdUser As New OleDbCommand
+        Dim sql As String
+
+        For Each col As DataGridViewRow In DgvProdutosVenda.Rows
+            nome = col.Cells(0).Value.ToString
+            qntProd = col.Cells(1).Value.ToString
+
+            BuscarEstoqueVendaCancelada(nome)
+
+            Try
+                fechar()
+                abrir()
+
+                sql = "UPDATE Produtos SET estoque_Produto = " & estoqueAtual + qntProd & " WHERE nome_Produto = '" & nome & "'"
+                cmdUser = New OleDbCommand(sql, con)
+                cmdUser.ExecuteNonQuery()
+
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            Finally
+                fechar()
+            End Try
+        Next
+    End Sub
+
+    Sub AtualizarEstoqueProdutoCancelado()
+        Dim nome As String
+        Dim qntProd As Integer
+        Dim cmdUser As New OleDbCommand
+        Dim sql As String
+
+        nome = DgvProdutosVenda.CurrentRow.Cells(0).Value.ToString
+        qntProd = DgvProdutosVenda.CurrentRow.Cells(1).Value.ToString
+
+        BuscarEstoqueVendaCancelada(nome)
+
+        Try
+            fechar()
+            abrir()
+
+            sql = "UPDATE Produtos SET estoque_Produto = " & estoqueAtual + qntProd & " WHERE nome_Produto = '" & nome & "'"
+            cmdUser = New OleDbCommand(sql, con)
+            cmdUser.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            fechar()
         End Try
     End Sub
 End Class
