@@ -91,8 +91,10 @@ Public Class frmCarrinho
         PanelSelect.Location = New Point(0, 351)
         PanelSelect.Visible = True
         desabilitar()
+        Me.Cursor = Cursors.WaitCursor
         AtualizarEstoqueVendasCancelada()
         limpar()
+        Me.Cursor = Cursors.Default
         btn_Finalizar.Enabled = False
         btn_Cancelar.Enabled = False
         btn_Relatório.Enabled = True
@@ -112,6 +114,7 @@ Public Class frmCarrinho
     Private Sub frmCarrinho_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btn_Finalizar.Enabled = False
         btn_Cancelar.Enabled = False
+        DgvProdutosVenda.ReadOnly = True
         valorInicial()
     End Sub
 
@@ -123,7 +126,7 @@ Public Class frmCarrinho
         If e.KeyCode = Keys.Enter Then
             debitaestoque()
             Total_produto()
-            DgvProdutosVenda.Rows.Add(tbProduto.Text, tbquantidade.Text, tbTotalProd.Text)
+            DgvProdutosVenda.Rows.Add(tbProduto.Text, tbquantidade.Text, tbTotalProd.Text, "X")
             SomarValor()
             tbquantidade.Text = ""
         End If
@@ -215,7 +218,6 @@ Public Class frmCarrinho
     Private Sub DgvProdutosVenda_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DgvProdutosVenda.RowHeaderMouseClick
         DgvProdutosVenda.Rows.RemoveAt(DgvProdutosVenda.CurrentRow.Index)
         SomarValor()
-
     End Sub
 
     Sub BuscarIdFunc() 'Busca o ID do funcionário
@@ -265,10 +267,6 @@ Public Class frmCarrinho
             cmd = Nothing
         End Try
     End Sub
-
-    ''' <summary>
-    ''' 
-    ''' </summary>
 
     Sub BuscarEstoqueAtual() 'Busca o estoque atual
         Dim cmdUser As New OleDbCommand
@@ -366,5 +364,13 @@ Public Class frmCarrinho
         Finally
             fechar()
         End Try
+    End Sub
+
+    Private Sub DgvProdutosVenda_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvProdutosVenda.CellContentClick
+        If DgvProdutosVenda.CurrentCell.Value.ToString = "X" Then
+
+            AtualizarEstoqueProdutoCancelado()
+            DgvProdutosVenda.Rows.RemoveAt(DgvProdutosVenda.CurrentRow.Index)
+        End If
     End Sub
 End Class

@@ -31,6 +31,7 @@ Partial Class frmCarrinho
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.X = New System.Windows.Forms.Button()
@@ -154,28 +155,39 @@ Partial Class frmCarrinho
         Me.DgvProdutosVenda.AllowUserToResizeRows = False
         Me.DgvProdutosVenda.BackgroundColor = System.Drawing.Color.White
         Me.DgvProdutosVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvProdutosVenda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column5})
+        Me.DgvProdutosVenda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column5, Me.Column2})
         Me.DgvProdutosVenda.Enabled = False
         Me.DgvProdutosVenda.Location = New System.Drawing.Point(269, 118)
         Me.DgvProdutosVenda.Name = "DgvProdutosVenda"
-        Me.DgvProdutosVenda.Size = New System.Drawing.Size(326, 512)
+        Me.DgvProdutosVenda.ShowEditingIcon = False
+        Me.DgvProdutosVenda.Size = New System.Drawing.Size(352, 512)
         Me.DgvProdutosVenda.TabIndex = 2
+        Me.DgvProdutosVenda.TabStop = False
         '
         'Column1
         '
+        Me.Column1.FillWeight = 89.32039!
         Me.Column1.HeaderText = "Produto"
         Me.Column1.Name = "Column1"
         Me.Column1.Width = 80
         '
         'Column4
         '
+        Me.Column4.FillWeight = 126.5421!
         Me.Column4.HeaderText = "Quantidade"
         Me.Column4.Name = "Column4"
         '
         'Column5
         '
+        Me.Column5.FillWeight = 124.0068!
         Me.Column5.HeaderText = "Valor Total"
         Me.Column5.Name = "Column5"
+        '
+        'Column2
+        '
+        Me.Column2.FillWeight = 60.1307!
+        Me.Column2.HeaderText = "X"
+        Me.Column2.Name = "Column2"
         '
         'Label10
         '
@@ -377,7 +389,7 @@ Partial Class frmCarrinho
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(269, 74)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(326, 34)
+        Me.Panel3.Size = New System.Drawing.Size(352, 34)
         Me.Panel3.TabIndex = 93
         '
         'Label1
@@ -917,4 +929,5 @@ Partial Class frmCarrinho
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents btnProcurarProd As Button
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
 End Class
