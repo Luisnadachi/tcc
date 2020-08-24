@@ -80,6 +80,12 @@
     <Compile Include="Adicionar_Carrinho.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormBackup.Designer.vb">
+      <DependentUpon>FormBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCarrinho.Designer.vb">
       <DependentUpon>FormCarrinho.vb</DependentUpon>
     </Compile>
@@ -180,6 +186,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Adicionar_Carrinho.resx">
       <DependentUpon>Adicionar_Carrinho.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBackup.resx">
+      <DependentUpon>FormBackup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCarrinho.resx">
       <DependentUpon>FormCarrinho.vb</DependentUpon>

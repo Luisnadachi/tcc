@@ -165,6 +165,7 @@ Public Class frmFuncionario
         btn_Atualizar.Enabled = True
         btn_Pesquisar.Enabled = True
         btn_Relatório.Enabled = False
+        TextBoxVendasFunc.Enabled = False
     End Sub
 
     Private Sub btn_Excluir_Click(sender As Object, e As EventArgs) Handles btn_Excluir.Click

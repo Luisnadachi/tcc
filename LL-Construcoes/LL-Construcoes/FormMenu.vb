@@ -36,15 +36,7 @@ Public Class frmMenu
     End Sub
 
     Private Sub Panel_Backup_Click(sender As Object, e As EventArgs) Handles Panel_Backup.Click
-        Try
-            Dim fdb As New FolderBrowserDialog
-            If fdb.ShowDialog() = vbOK Then
-                File.Copy("LLConstrucoes.mdb", fdb.SelectedPath & "\LLConstrucoes.mdb")
-                MsgBox("Backup feito com sucesso!")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        frmBackup.Show()
     End Sub
 
     Private Sub PictureBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseClick
@@ -73,42 +65,6 @@ Public Class frmMenu
     End Sub
 
     Private Sub PictureBox5_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox5.MouseClick
-        Try
-            Dim fdb As New FolderBrowserDialog
-            If fdb.ShowDialog() = vbOK Then
-                File.Copy("LLConstrucoes.mdb", fdb.SelectedPath & "\LLConstrucoes.mdb")
-                MsgBox("Backup feito com sucesso!")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub PanelRestaurarBackup_MouseClick(sender As Object, e As MouseEventArgs) Handles PanelRestaurarBackup.MouseClick
-        Try
-            Dim fdb As New FolderBrowserDialog
-            If fdb.ShowDialog() = vbOK Then
-                File.Delete("LLConstrucoes.mdb")
-                File.Copy(fdb.SelectedPath & "\LLConstrucoes.mdb", "LLConstrucoes.mdb")
-                MsgBox("Backup feito com sucesso!")
-                Application.Restart()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        Try
-            Dim fdb As New FolderBrowserDialog
-            If fdb.ShowDialog() = vbOK Then
-                File.Delete("LLConstrucoes.mdb")
-                File.Copy(fdb.SelectedPath & "\LLConstrucoes.mdb", "LLConstrucoes.mdb")
-                MsgBox("Backup feito com sucesso!")
-                Application.Restart()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        frmBackup.Show()
     End Sub
 End Class
