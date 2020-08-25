@@ -73,8 +73,6 @@ Partial Class frmFuncionario
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TextBoxVendasFunc = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.TextBoxComissaoFunc = New System.Windows.Forms.TextBox()
-        Me.Label44 = New System.Windows.Forms.Label()
         Me.TextBoxSalarioFunc = New System.Windows.Forms.TextBox()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label77 = New System.Windows.Forms.Label()
@@ -675,8 +673,6 @@ Partial Class frmFuncionario
         '
         Me.GroupBox4.Controls.Add(Me.TextBoxVendasFunc)
         Me.GroupBox4.Controls.Add(Me.Label42)
-        Me.GroupBox4.Controls.Add(Me.TextBoxComissaoFunc)
-        Me.GroupBox4.Controls.Add(Me.Label44)
         Me.GroupBox4.Controls.Add(Me.TextBoxSalarioFunc)
         Me.GroupBox4.Controls.Add(Me.Label43)
         Me.GroupBox4.Controls.Add(Me.Label77)
@@ -699,7 +695,7 @@ Partial Class frmFuncionario
         '
         Me.TextBoxVendasFunc.Enabled = False
         Me.TextBoxVendasFunc.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxVendasFunc.Location = New System.Drawing.Point(13, 177)
+        Me.TextBoxVendasFunc.Location = New System.Drawing.Point(299, 119)
         Me.TextBoxVendasFunc.Name = "TextBoxVendasFunc"
         Me.TextBoxVendasFunc.Size = New System.Drawing.Size(135, 26)
         Me.TextBoxVendasFunc.TabIndex = 26
@@ -707,29 +703,11 @@ Partial Class frmFuncionario
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(13, 155)
+        Me.Label42.Location = New System.Drawing.Point(299, 94)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(74, 22)
         Me.Label42.TabIndex = 72
         Me.Label42.Text = "Vendas"
-        '
-        'TextBoxComissaoFunc
-        '
-        Me.TextBoxComissaoFunc.Enabled = False
-        Me.TextBoxComissaoFunc.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxComissaoFunc.Location = New System.Drawing.Point(299, 119)
-        Me.TextBoxComissaoFunc.Name = "TextBoxComissaoFunc"
-        Me.TextBoxComissaoFunc.Size = New System.Drawing.Size(123, 26)
-        Me.TextBoxComissaoFunc.TabIndex = 25
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(299, 94)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(96, 22)
-        Me.Label44.TabIndex = 70
-        Me.Label44.Text = "Comissão"
         '
         'TextBoxSalarioFunc
         '
@@ -1000,8 +978,6 @@ Partial Class frmFuncionario
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents TextBoxVendasFunc As TextBox
     Friend WithEvents Label42 As Label
-    Friend WithEvents TextBoxComissaoFunc As TextBox
-    Friend WithEvents Label44 As Label
     Friend WithEvents TextBoxSalarioFunc As TextBox
     Friend WithEvents Label43 As Label
     Friend WithEvents Label77 As Label

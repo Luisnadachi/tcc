@@ -33,8 +33,6 @@ Public Class frmFuncionario
         TextBoxContaBancoFunc.Enabled = True
         TextBoxOperacaoBancoFunc.Enabled = True
         TextBoxSalarioFunc.Enabled = True
-        TextBoxComissaoFunc.Enabled = True
-        TextBoxVendasFunc.Enabled = True
         ButtonAddFoto.Enabled = True
     End Sub
 
@@ -61,8 +59,6 @@ Public Class frmFuncionario
         TextBoxContaBancoFunc.Enabled = False
         TextBoxOperacaoBancoFunc.Enabled = False
         TextBoxSalarioFunc.Enabled = False
-        TextBoxComissaoFunc.Enabled = False
-        TextBoxVendasFunc.Enabled = False
         ButtonAddFoto.Enabled = False
     End Sub
 
@@ -90,7 +86,6 @@ Public Class frmFuncionario
         TextBoxContaBancoFunc.Text = ""
         TextBoxOperacaoBancoFunc.Text = ""
         TextBoxSalarioFunc.Text = ""
-        TextBoxComissaoFunc.Text = ""
         TextBoxVendasFunc.Text = ""
         PictureBoxFunc.Image = Nothing
     End Sub
@@ -106,12 +101,13 @@ Public Class frmFuncionario
         btn_Relatório.Enabled = False
         btn_Editar.Enabled = False
         TextBoxSalarioFunc.Text = FormatCurrency("0,00")
+        TextBoxVendasFunc.Text = "0"
     End Sub
 
     Private Sub btn_Salvar_Click(sender As Object, e As EventArgs) Handles btn_Salvar.Click
         PanelSelect.Location = New Point(0, 250)
         PanelSelect.Visible = True
-        If TextBoxNomeFunc.Text = "" Or MaskedTextBoxNascimentoFunc.Text = "" Or MaskedTextBoxCPFFunc.Text = "" Or MaskedTextBoxRGFunc.Text = "" Or TextBoxEMAILFunc.Text = "" Or MaskedTextBoxTEL1Func.Text = "" Or MaskedTextBoxCEL1Func.Text = "" Or TextBoxLoginFunc.Text = "" Or TextBoxSenhaFunc.Text = "" Or ComboBoxCargoFunc.Text = "" Or TextBoxLogradouroFunc.Text = "" Or TextBoxNUmENDFunc.Text = "" Or TextBoxBairroFunc.Text = "" Or TextBoxCompleFunc.Text = "" Or MaskedTextBoxCEPFunc.Text = "" Or TextBoxCidadeFunc.Text = "" Or TextBoxUFFunc.Text = "" Or ComboBoxBancoFunc.Text = "" Or TextBoxAgenciaFunc.Text = "" Or TextBoxContaBancoFunc.Text = "" Or TextBoxOperacaoBancoFunc.Text = "" Or TextBoxSalarioFunc.Text = "" Or TextBoxComissaoFunc.Text = "" Or TextBoxVendasFunc.Text = "" Then
+        If TextBoxNomeFunc.Text = "" Or MaskedTextBoxNascimentoFunc.Text = "" Or MaskedTextBoxCPFFunc.Text = "" Or MaskedTextBoxRGFunc.Text = "" Or TextBoxEMAILFunc.Text = "" Or MaskedTextBoxTEL1Func.Text = "" Or MaskedTextBoxCEL1Func.Text = "" Or TextBoxLoginFunc.Text = "" Or TextBoxSenhaFunc.Text = "" Or ComboBoxCargoFunc.Text = "" Or TextBoxLogradouroFunc.Text = "" Or TextBoxNUmENDFunc.Text = "" Or TextBoxBairroFunc.Text = "" Or TextBoxCompleFunc.Text = "" Or MaskedTextBoxCEPFunc.Text = "" Or TextBoxCidadeFunc.Text = "" Or TextBoxUFFunc.Text = "" Or ComboBoxBancoFunc.Text = "" Or TextBoxAgenciaFunc.Text = "" Or TextBoxContaBancoFunc.Text = "" Or TextBoxOperacaoBancoFunc.Text = "" Or TextBoxSalarioFunc.Text = "" Or TextBoxVendasFunc.Text = "" Then
             MessageBox.Show("Preencha todos os campos!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information)
             TextBoxNomeFunc.Focus()
         Else
@@ -127,7 +123,7 @@ Public Class frmFuncionario
                 Dim cmd As OleDbCommand
                 Dim sql As String
 
-                sql = ("INSERT INTO Funcionarios (nome_Func, nascimento_Func, cpf_Func, rg_Func, email_Func, tel_Func, cel_Func, usuario_Func, senha_Func, cargo_Func, logradouro_Func, numeroEnd_Func, bairro_Func, complemento_Func, cep_Func, cidade_Func, uf_Func, banco_Func, agencia_Func, conta_Func, operacao_Func, salario_Func, comissao_Func, vendas_Func,  foto_Func) VALUES ('" & TextBoxNomeFunc.Text & "', '" & MaskedTextBoxNascimentoFunc.Text & "', '" & MaskedTextBoxCPFFunc.Text & "', '" & MaskedTextBoxRGFunc.Text & "', '" & TextBoxEMAILFunc.Text & "', '" & MaskedTextBoxTEL1Func.Text & "', '" & MaskedTextBoxCEL1Func.Text & "', '" & TextBoxLoginFunc.Text & "', '" & TextBoxSenhaFunc.Text & "', '" & ComboBoxCargoFunc.Text & "', '" & TextBoxLogradouroFunc.Text & "', '" & TextBoxNUmENDFunc.Text & "', '" & TextBoxBairroFunc.Text & "', '" & TextBoxCompleFunc.Text & "', '" & MaskedTextBoxCEPFunc.Text & "', '" & TextBoxCidadeFunc.Text & "', '" & TextBoxUFFunc.Text & "', '" & ComboBoxBancoFunc.Text & "', '" & TextBoxAgenciaFunc.Text & "', '" & TextBoxContaBancoFunc.Text & "', '" & TextBoxOperacaoBancoFunc.Text & "', '" & TextBoxSalarioFunc.Text & "', '" & TextBoxComissaoFunc.Text & "', '" & TextBoxVendasFunc.Text & "', " & " @img )")
+                sql = ("INSERT INTO Funcionarios (nome_Func, nascimento_Func, cpf_Func, rg_Func, email_Func, tel_Func, cel_Func, usuario_Func, senha_Func, cargo_Func, logradouro_Func, numeroEnd_Func, bairro_Func, complemento_Func, cep_Func, cidade_Func, uf_Func, banco_Func, agencia_Func, conta_Func, operacao_Func, salario_Func, vendas_Func,  foto_Func) VALUES ('" & TextBoxNomeFunc.Text & "', '" & MaskedTextBoxNascimentoFunc.Text & "', '" & MaskedTextBoxCPFFunc.Text & "', '" & MaskedTextBoxRGFunc.Text & "', '" & TextBoxEMAILFunc.Text & "', '" & MaskedTextBoxTEL1Func.Text & "', '" & MaskedTextBoxCEL1Func.Text & "', '" & TextBoxLoginFunc.Text & "', '" & TextBoxSenhaFunc.Text & "', '" & ComboBoxCargoFunc.Text & "', '" & TextBoxLogradouroFunc.Text & "', '" & TextBoxNUmENDFunc.Text & "', '" & TextBoxBairroFunc.Text & "', '" & TextBoxCompleFunc.Text & "', '" & MaskedTextBoxCEPFunc.Text & "', '" & TextBoxCidadeFunc.Text & "', '" & TextBoxUFFunc.Text & "', '" & ComboBoxBancoFunc.Text & "', '" & TextBoxAgenciaFunc.Text & "', '" & TextBoxContaBancoFunc.Text & "', '" & TextBoxOperacaoBancoFunc.Text & "', '" & TextBoxSalarioFunc.Text & "', '" & TextBoxVendasFunc.Text & "', " & " @img )")
 
                 Dim param As New OleDbParameter
                 param.OleDbType = OleDbType.Binary
@@ -219,7 +215,7 @@ Public Class frmFuncionario
                     PictureBoxFunc.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png)
                     bytearray = ms.ToArray
 
-                    sql = "UPDATE Funcionarios SET nome_Func = '" & TextBoxNomeFunc.Text & "', nascimento_Func = '" & MaskedTextBoxNascimentoFunc.Text & "', cpf_Func = '" & MaskedTextBoxCPFFunc.Text & "', rg_Func = '" & MaskedTextBoxRGFunc.Text & "', email_Func = '" & TextBoxEMAILFunc.Text & "', tel_Func = '" & MaskedTextBoxTEL1Func.Text & "', cel_Func = '" & MaskedTextBoxCEL1Func.Text & "', usuario_Func = '" & TextBoxLoginFunc.Text & "', senha_Func = '" & TextBoxSenhaFunc.Text & "', cargo_Func = '" & ComboBoxCargoFunc.Text & "', logradouro_Func = '" & TextBoxLogradouroFunc.Text & "', numeroEnd_Func = '" & TextBoxNUmENDFunc.Text & "', bairro_Func = '" & TextBoxBairroFunc.Text & "', complemento_Func = '" & TextBoxCompleFunc.Text & "', cep_Func = '" & MaskedTextBoxCEPFunc.Text & "', cidade_Func = '" & TextBoxCidadeFunc.Text & "', uf_Func = '" & TextBoxUFFunc.Text & "', banco_Func = '" & ComboBoxBancoFunc.Text & "', agencia_Func = '" & TextBoxAgenciaFunc.Text & "', conta_Func = '" & TextBoxContaBancoFunc.Text & "', operacao_Func = '" & TextBoxOperacaoBancoFunc.Text & "', salario_Func = '" & TextBoxSalarioFunc.Text & "', comissao_Func = '" & TextBoxComissaoFunc.Text & "', foto_Func = @img, vendas_Func = '" & TextBoxVendasFunc.Text & "' WHERE id_Func = " + TextBoxIdFunc.Text
+                    sql = "UPDATE Funcionarios SET nome_Func = '" & TextBoxNomeFunc.Text & "', nascimento_Func = '" & MaskedTextBoxNascimentoFunc.Text & "', cpf_Func = '" & MaskedTextBoxCPFFunc.Text & "', rg_Func = '" & MaskedTextBoxRGFunc.Text & "', email_Func = '" & TextBoxEMAILFunc.Text & "', tel_Func = '" & MaskedTextBoxTEL1Func.Text & "', cel_Func = '" & MaskedTextBoxCEL1Func.Text & "', usuario_Func = '" & TextBoxLoginFunc.Text & "', senha_Func = '" & TextBoxSenhaFunc.Text & "', cargo_Func = '" & ComboBoxCargoFunc.Text & "', logradouro_Func = '" & TextBoxLogradouroFunc.Text & "', numeroEnd_Func = '" & TextBoxNUmENDFunc.Text & "', bairro_Func = '" & TextBoxBairroFunc.Text & "', complemento_Func = '" & TextBoxCompleFunc.Text & "', cep_Func = '" & MaskedTextBoxCEPFunc.Text & "', cidade_Func = '" & TextBoxCidadeFunc.Text & "', uf_Func = '" & TextBoxUFFunc.Text & "', banco_Func = '" & ComboBoxBancoFunc.Text & "', agencia_Func = '" & TextBoxAgenciaFunc.Text & "', conta_Func = '" & TextBoxContaBancoFunc.Text & "', operacao_Func = '" & TextBoxOperacaoBancoFunc.Text & "', salario_Func = '" & TextBoxSalarioFunc.Text & "', foto_Func = @img, vendas_Func = '" & TextBoxVendasFunc.Text & "' WHERE id_Func = " + TextBoxIdFunc.Text
 
                     cmd = New OleDbCommand(sql, con)
                     cmd.Parameters.AddWithValue("img", bytearray)
@@ -248,7 +244,7 @@ Public Class frmFuncionario
                     Dim cmd As OleDbCommand
                     Dim sql As String
 
-                    sql = "UPDATE Funcionarios SET nome_Func = '" & TextBoxNomeFunc.Text & "', nascimento_Func = '" & MaskedTextBoxNascimentoFunc.Text & "', cpf_Func = '" & MaskedTextBoxCPFFunc.Text & "', rg_Func = '" & MaskedTextBoxRGFunc.Text & "', email_Func = '" & TextBoxEMAILFunc.Text & "', tel_Func = '" & MaskedTextBoxTEL1Func.Text & "', cel_Func = '" & MaskedTextBoxCEL1Func.Text & "', usuario_Func = '" & TextBoxLoginFunc.Text & "', senha_Func = '" & TextBoxSenhaFunc.Text & "', cargo_Func = '" & ComboBoxCargoFunc.Text & "', logradouro_Func = '" & TextBoxLogradouroFunc.Text & "', numeroEnd_Func = '" & TextBoxNUmENDFunc.Text & "', bairro_Func = '" & TextBoxBairroFunc.Text & "', complemento_Func = '" & TextBoxCompleFunc.Text & "', cep_Func = '" & MaskedTextBoxCEPFunc.Text & "', cidade_Func = '" & TextBoxCidadeFunc.Text & "', uf_Func = '" & TextBoxUFFunc.Text & "', banco_Func = '" & ComboBoxBancoFunc.Text & "', agencia_Func = '" & TextBoxAgenciaFunc.Text & "', conta_Func = '" & TextBoxContaBancoFunc.Text & "', operacao_Func = '" & TextBoxOperacaoBancoFunc.Text & "', salario_Func = '" & TextBoxSalarioFunc.Text & "', comissao_Func = '" & TextBoxComissaoFunc.Text & "', vendas_Func = '" & TextBoxVendasFunc.Text & "' WHERE id_Func = " + TextBoxIdFunc.Text
+                    sql = "UPDATE Funcionarios SET nome_Func = '" & TextBoxNomeFunc.Text & "', nascimento_Func = '" & MaskedTextBoxNascimentoFunc.Text & "', cpf_Func = '" & MaskedTextBoxCPFFunc.Text & "', rg_Func = '" & MaskedTextBoxRGFunc.Text & "', email_Func = '" & TextBoxEMAILFunc.Text & "', tel_Func = '" & MaskedTextBoxTEL1Func.Text & "', cel_Func = '" & MaskedTextBoxCEL1Func.Text & "', usuario_Func = '" & TextBoxLoginFunc.Text & "', senha_Func = '" & TextBoxSenhaFunc.Text & "', cargo_Func = '" & ComboBoxCargoFunc.Text & "', logradouro_Func = '" & TextBoxLogradouroFunc.Text & "', numeroEnd_Func = '" & TextBoxNUmENDFunc.Text & "', bairro_Func = '" & TextBoxBairroFunc.Text & "', complemento_Func = '" & TextBoxCompleFunc.Text & "', cep_Func = '" & MaskedTextBoxCEPFunc.Text & "', cidade_Func = '" & TextBoxCidadeFunc.Text & "', uf_Func = '" & TextBoxUFFunc.Text & "', banco_Func = '" & ComboBoxBancoFunc.Text & "', agencia_Func = '" & TextBoxAgenciaFunc.Text & "', conta_Func = '" & TextBoxContaBancoFunc.Text & "', operacao_Func = '" & TextBoxOperacaoBancoFunc.Text & "', salario_Func = '" & TextBoxSalarioFunc.Text & "', vendas_Func = '" & TextBoxVendasFunc.Text & "' WHERE id_Func = " + TextBoxIdFunc.Text
 
                     cmd = New OleDbCommand(sql, con)
                     cmd.ExecuteNonQuery()

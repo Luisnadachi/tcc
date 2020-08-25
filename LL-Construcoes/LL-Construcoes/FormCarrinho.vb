@@ -116,6 +116,7 @@ Public Class frmCarrinho
         btn_Cancelar.Enabled = False
         DgvProdutosVenda.ReadOnly = True
         valorInicial()
+        buscarDataHora()
     End Sub
 
     Private Sub btnProcurarProd_Click(sender As Object, e As EventArgs) Handles btnProcurarProd.Click
@@ -372,5 +373,13 @@ Public Class frmCarrinho
             AtualizarEstoqueProdutoCancelado()
             DgvProdutosVenda.Rows.RemoveAt(DgvProdutosVenda.CurrentRow.Index)
         End If
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    Sub buscarDataHora()
+        lblData.Text = Now.ToShortDateString
+        lblHora.Text = Now.ToShortTimeString
     End Sub
 End Class

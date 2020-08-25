@@ -78,7 +78,6 @@
     Public conta_func As String
     Public operacao_func As String
     Public salario_func As Double
-    Public comissao_func As Integer
     Public vendas_func As String
     Public img_f As String
     'Fim Cadastro de Funcionários'

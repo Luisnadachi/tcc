@@ -85,6 +85,8 @@ Partial Class frmCarrinho
         Me.btnProcurarProd = New System.Windows.Forms.Button()
         Me.PictureBoxProd = New System.Windows.Forms.PictureBox()
         Me.btnCliente = New System.Windows.Forms.Button()
+        Me.lblData = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
         CType(Me.DgvProdutosVenda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -366,7 +368,7 @@ Partial Class frmCarrinho
         '
         Me.TextBoxIdVenda.Enabled = False
         Me.TextBoxIdVenda.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxIdVenda.Location = New System.Drawing.Point(335, 668)
+        Me.TextBoxIdVenda.Location = New System.Drawing.Point(273, 654)
         Me.TextBoxIdVenda.Name = "TextBoxIdVenda"
         Me.TextBoxIdVenda.Size = New System.Drawing.Size(91, 26)
         Me.TextBoxIdVenda.TabIndex = 90
@@ -376,7 +378,7 @@ Partial Class frmCarrinho
         '
         Me.Label83.AutoSize = True
         Me.Label83.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label83.Location = New System.Drawing.Point(331, 643)
+        Me.Label83.Location = New System.Drawing.Point(269, 633)
         Me.Label83.Name = "Label83"
         Me.Label83.Size = New System.Drawing.Size(27, 22)
         Me.Label83.TabIndex = 89
@@ -785,11 +787,32 @@ Partial Class frmCarrinho
         Me.btnCliente.TabIndex = 12
         Me.btnCliente.UseVisualStyleBackColor = False
         '
+        'lblData
+        '
+        Me.lblData.AutoSize = True
+        Me.lblData.Location = New System.Drawing.Point(273, 683)
+        Me.lblData.Name = "lblData"
+        Me.lblData.Size = New System.Drawing.Size(56, 13)
+        Me.lblData.TabIndex = 114
+        Me.lblData.Text = "LabelData"
+        Me.lblData.Visible = False
+        '
+        'lblHora
+        '
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Location = New System.Drawing.Point(276, 716)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(56, 13)
+        Me.lblHora.TabIndex = 115
+        Me.lblHora.Text = "LabelHora"
+        '
         'frmCarrinho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1448, 900)
+        Me.Controls.Add(Me.lblHora)
+        Me.Controls.Add(Me.lblData)
         Me.Controls.Add(Me.btnProcurarProd)
         Me.Controls.Add(Me.PictureBoxProd)
         Me.Controls.Add(Me.tbestoque)
@@ -930,4 +953,6 @@ Partial Class frmCarrinho
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents btnProcurarProd As Button
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents lblData As Label
+    Friend WithEvents lblHora As Label
 End Class

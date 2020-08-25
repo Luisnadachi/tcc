@@ -53,9 +53,8 @@ Public Class frmPFunc
         dgv_func.Columns(20).HeaderText = "Conta"
         dgv_func.Columns(21).HeaderText = "Operação"
         dgv_func.Columns(22).HeaderText = "Salario"
-        dgv_func.Columns(23).HeaderText = "Comissao"
-        dgv_func.Columns(24).HeaderText = "Vendas"
-        dgv_func.Columns(25).HeaderText = "Foto"
+        dgv_func.Columns(23).HeaderText = "Vendas"
+        dgv_func.Columns(24).HeaderText = "Foto"
     End Sub
 
     Private Sub ContarLinhas()
@@ -156,7 +155,6 @@ Public Class frmPFunc
         Dim conta As String
         Dim operacao As String
         Dim salario As Double
-        Dim comissao As Integer
         Dim vendas As String
 
         id = dgv_func.CurrentRow.Cells(0).Value
@@ -182,10 +180,9 @@ Public Class frmPFunc
         conta = dgv_func.CurrentRow.Cells(20).Value
         operacao = dgv_func.CurrentRow.Cells(21).Value
         salario = dgv_func.CurrentRow.Cells(22).Value
-        comissao = dgv_func.CurrentRow.Cells(23).Value
-        vendas = dgv_func.CurrentRow.Cells(24).Value
+        vendas = dgv_func.CurrentRow.Cells(23).Value
 
-        Dim img As Byte() = dgv_func.CurrentRow.Cells(25).Value
+        Dim img As Byte() = dgv_func.CurrentRow.Cells(24).Value
         Dim ms As MemoryStream = New MemoryStream(img)
         frmFuncionario.PictureBoxFunc.Image = System.Drawing.Image.FromStream(ms)
         frmFuncionario.PictureBoxFunc.SizeMode = PictureBoxSizeMode.StretchImage
@@ -216,7 +213,6 @@ Public Class frmPFunc
             operacao_func = operacao
             salario_func = salario
             vendas_func = vendas
-            comissao_func = comissao
             idfunc = id
 
             frmFuncionario.TextBoxIdFunc.Text = idfunc
@@ -242,7 +238,6 @@ Public Class frmPFunc
             frmFuncionario.TextBoxContaBancoFunc.Text = conta_func
             frmFuncionario.TextBoxOperacaoBancoFunc.Text = operacao_func
             frmFuncionario.TextBoxSalarioFunc.Text = FormatCurrency(salario_func)
-            frmFuncionario.TextBoxComissaoFunc.Text = comissao_func
             frmFuncionario.TextBoxVendasFunc.Text = vendas_func
 
             frmFuncionario.Show()
@@ -275,7 +270,6 @@ Public Class frmPFunc
         Dim conta As String
         Dim operacao As String
         Dim salario As Double
-        Dim comissao As Integer
         Dim vendas As String
 
         id = dgv_func.CurrentRow.Cells(0).Value
@@ -301,10 +295,9 @@ Public Class frmPFunc
         conta = dgv_func.CurrentRow.Cells(20).Value
         operacao = dgv_func.CurrentRow.Cells(21).Value
         salario = dgv_func.CurrentRow.Cells(22).Value
-        comissao = dgv_func.CurrentRow.Cells(23).Value
-        vendas = dgv_func.CurrentRow.Cells(24).Value
+        vendas = dgv_func.CurrentRow.Cells(23).Value
 
-        Dim img As Byte() = dgv_func.CurrentRow.Cells(25).Value
+        Dim img As Byte() = dgv_func.CurrentRow.Cells(24).Value
         Dim ms As MemoryStream = New MemoryStream(img)
         frmFuncionario.PictureBoxFunc.Image = System.Drawing.Image.FromStream(ms)
         frmFuncionario.PictureBoxFunc.SizeMode = PictureBoxSizeMode.StretchImage
@@ -335,7 +328,6 @@ Public Class frmPFunc
             operacao_func = operacao
             salario_func = salario
             vendas_func = vendas
-            comissao_func = comissao
             idfunc = id
 
             frmFuncionario.TextBoxIdFunc.Text = idfunc
@@ -361,7 +353,6 @@ Public Class frmPFunc
             frmFuncionario.TextBoxContaBancoFunc.Text = conta_func
             frmFuncionario.TextBoxOperacaoBancoFunc.Text = operacao_func
             frmFuncionario.TextBoxSalarioFunc.Text = FormatCurrency(salario_func)
-            frmFuncionario.TextBoxComissaoFunc.Text = comissao_func
             frmFuncionario.TextBoxVendasFunc.Text = vendas_func
 
             frmFuncionario.Show()
