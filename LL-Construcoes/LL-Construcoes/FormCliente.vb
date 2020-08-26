@@ -17,7 +17,7 @@ Public Class frmCliente
         TextBoxComplementoCli.Enabled = True
         MaskedTextBoxCEPCLI.Enabled = True
         TextBoxCidadeCLi.Enabled = True
-        TextBoxUfCli.Enabled = True
+        ComboBoxUF.Enabled = True
     End Sub
 
     Sub desabilitar()
@@ -34,7 +34,7 @@ Public Class frmCliente
         TextBoxComplementoCli.Enabled = False
         MaskedTextBoxCEPCLI.Enabled = False
         TextBoxCidadeCLi.Enabled = False
-        TextBoxUfCli.Enabled = False
+        ComboBoxUF.Enabled = False
     End Sub
 
     Sub limpar()
@@ -51,7 +51,7 @@ Public Class frmCliente
         TextBoxComplementoCli.Text = ""
         MaskedTextBoxCEPCLI.Text = ""
         TextBoxCidadeCLi.Text = ""
-        TextBoxUfCli.Text = ""
+        ComboBoxUF.Text = Nothing
         TextBoxIdCLI.Text = ""
     End Sub
 
@@ -78,7 +78,7 @@ Public Class frmCliente
         PanelSelect.Location = New Point(0, 250)
         PanelSelect.Visible = True
 
-        If TextBoxNomeCLI.Text = "" Or MaskedTextBoxNascimentoCli.Text = "" Or MaskedTextBoxCPFCli.Text = "" Or MaskedTextBoxRGCli.Text = "" Or TextBoxEMAILCLI.Text = "" Or MaskedTextBoxTEL1Cli.Text = "" Or MaskedTextBoxCEL1Cli.Text = "" Or TextBoxLogradouroCLI.Text = "" Or TextBoxNumCli.Text = "" Or TextBoxBairroCli.Text = "" Or TextBoxComplementoCli.Text = "" Or MaskedTextBoxCEPCLI.Text = "" Or TextBoxCidadeCLi.Text = "" Or TextBoxUfCli.Text = "" Then
+        If TextBoxNomeCLI.Text = "" Or MaskedTextBoxNascimentoCli.Text = "" Or MaskedTextBoxCPFCli.Text = "" Or MaskedTextBoxRGCli.Text = "" Or TextBoxEMAILCLI.Text = "" Or MaskedTextBoxTEL1Cli.Text = "" Or MaskedTextBoxCEL1Cli.Text = "" Or TextBoxLogradouroCLI.Text = "" Or TextBoxNumCli.Text = "" Or TextBoxBairroCli.Text = "" Or TextBoxComplementoCli.Text = "" Or MaskedTextBoxCEPCLI.Text = "" Or TextBoxCidadeCLi.Text = "" Or ComboBoxUF.Text = "" Then
             MessageBox.Show("Preencha todos os campos!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information)
             TextBoxNomeCLI.Focus()
 
@@ -89,7 +89,7 @@ Public Class frmCliente
                 Dim cmd As OleDbCommand
                 Dim sql As String
 
-                sql = ("INSERT INTO Clientes (nome_Cliente, cpf_Cliente, rg_Cliente, celular_Cliente, telefone_Cliente, data_Nascimento_Cliente, email_Cliente, logradouro_Cliente, cidade_Cliente, estado_Cliente, complemento_Cliente, cep_Cliente, numero_end_Cliente, bairro_Cliente) VALUES ('" & TextBoxNomeCLI.Text & "', '" & MaskedTextBoxCPFCli.Text & "', '" & MaskedTextBoxRGCli.Text & "', '" & MaskedTextBoxCEL1Cli.Text & "', '" & MaskedTextBoxTEL1Cli.Text & "', '" & MaskedTextBoxNascimentoCli.Text & "', '" & TextBoxEMAILCLI.Text & "', '" & TextBoxLogradouroCLI.Text & "', '" & TextBoxCidadeCLi.Text & "', '" & TextBoxUfCli.Text & "', '" & TextBoxComplementoCli.Text & "', '" & MaskedTextBoxCEPCLI.Text & "', '" & TextBoxNumCli.Text & "', '" & TextBoxBairroCli.Text & "')")
+                sql = ("INSERT INTO Clientes (nome_Cliente, cpf_Cliente, rg_Cliente, celular_Cliente, telefone_Cliente, data_Nascimento_Cliente, email_Cliente, logradouro_Cliente, cidade_Cliente, estado_Cliente, complemento_Cliente, cep_Cliente, numero_end_Cliente, bairro_Cliente) VALUES ('" & TextBoxNomeCLI.Text & "', '" & MaskedTextBoxCPFCli.Text & "', '" & MaskedTextBoxRGCli.Text & "', '" & MaskedTextBoxCEL1Cli.Text & "', '" & MaskedTextBoxTEL1Cli.Text & "', '" & MaskedTextBoxNascimentoCli.Text & "', '" & TextBoxEMAILCLI.Text & "', '" & TextBoxLogradouroCLI.Text & "', '" & TextBoxCidadeCLi.Text & "', '" & ComboBoxUF.Text & "', '" & TextBoxComplementoCli.Text & "', '" & MaskedTextBoxCEPCLI.Text & "', '" & TextBoxNumCli.Text & "', '" & TextBoxBairroCli.Text & "')")
 
                 cmd = New OleDbCommand(sql, con)
                 cmd.ExecuteNonQuery()
@@ -162,7 +162,7 @@ Public Class frmCliente
                 Dim cmd As OleDbCommand
                 Dim sql As String
 
-                sql = "UPDATE Clientes SET nome_Cliente = '" & TextBoxNomeCLI.Text & "', cpf_Cliente = '" & MaskedTextBoxCPFCli.Text & "', rg_Cliente = '" & MaskedTextBoxRGCli.Text & "', celular_Cliente = '" & MaskedTextBoxCEL1Cli.Text & "', telefone_Cliente = '" & MaskedTextBoxTEL1Cli.Text & "', data_Nascimento_Cliente = '" & MaskedTextBoxNascimentoCli.Text & "', email_Cliente = '" & TextBoxEMAILCLI.Text & "', logradouro_Cliente = '" & TextBoxLogradouroCLI.Text & "', cidade_Cliente= '" & TextBoxCidadeCLi.Text & "', estado_Cliente = '" & TextBoxUfCli.Text & "', complemento_Cliente = '" & TextBoxComplementoCli.Text & "', cep_Cliente = '" & MaskedTextBoxCEPCLI.Text & "', numero_end_Cliente = '" & TextBoxNumCli.Text & "', bairro_Cliente = '" & TextBoxBairroCli.Text & "' WHERE id_Cliente = " + TextBoxIdCLI.Text
+                sql = "UPDATE Clientes SET nome_Cliente = '" & TextBoxNomeCLI.Text & "', cpf_Cliente = '" & MaskedTextBoxCPFCli.Text & "', rg_Cliente = '" & MaskedTextBoxRGCli.Text & "', celular_Cliente = '" & MaskedTextBoxCEL1Cli.Text & "', telefone_Cliente = '" & MaskedTextBoxTEL1Cli.Text & "', data_Nascimento_Cliente = '" & MaskedTextBoxNascimentoCli.Text & "', email_Cliente = '" & TextBoxEMAILCLI.Text & "', logradouro_Cliente = '" & TextBoxLogradouroCLI.Text & "', cidade_Cliente= '" & TextBoxCidadeCLi.Text & "', estado_Cliente = '" & ComboBoxUF.Text & "', complemento_Cliente = '" & TextBoxComplementoCli.Text & "', cep_Cliente = '" & MaskedTextBoxCEPCLI.Text & "', numero_end_Cliente = '" & TextBoxNumCli.Text & "', bairro_Cliente = '" & TextBoxBairroCli.Text & "' WHERE id_Cliente = " + TextBoxIdCLI.Text
                 MessageBox.Show("Atualização feita com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 cmd = New OleDbCommand(sql, con)
                 cmd.ExecuteNonQuery()
@@ -188,6 +188,7 @@ Public Class frmCliente
         PanelSelect.Visible = True
         frmPCliente.Show()
         desabilitar()
+        limpar()
         btn_Editar.Enabled = True
         btn_Salvar.Enabled = False
     End Sub

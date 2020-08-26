@@ -35,7 +35,6 @@ Partial Class frmCliente
         Me.btn_Editar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.X = New System.Windows.Forms.Button()
-        Me.TextBoxUfCli = New System.Windows.Forms.TextBox()
         Me.TextBoxComplementoCli = New System.Windows.Forms.TextBox()
         Me.TextBoxNumCli = New System.Windows.Forms.TextBox()
         Me.TextBoxBairroCli = New System.Windows.Forms.TextBox()
@@ -58,6 +57,7 @@ Partial Class frmCliente
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBoxUF = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.MaskedTextBoxRGCli = New System.Windows.Forms.MaskedTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -291,15 +291,6 @@ Partial Class frmCliente
         Me.X.Text = "X"
         Me.X.UseVisualStyleBackColor = True
         '
-        'TextBoxUfCli
-        '
-        Me.TextBoxUfCli.Enabled = False
-        Me.TextBoxUfCli.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUfCli.Location = New System.Drawing.Point(269, 227)
-        Me.TextBoxUfCli.Name = "TextBoxUfCli"
-        Me.TextBoxUfCli.Size = New System.Drawing.Size(100, 26)
-        Me.TextBoxUfCli.TabIndex = 19
-        '
         'TextBoxComplementoCli
         '
         Me.TextBoxComplementoCli.Enabled = False
@@ -505,9 +496,9 @@ Partial Class frmCliente
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboBoxUF)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.TextBoxLogradouroCLI)
-        Me.GroupBox2.Controls.Add(Me.TextBoxUfCli)
         Me.GroupBox2.Controls.Add(Me.Label19)
         Me.GroupBox2.Controls.Add(Me.MaskedTextBoxCEPCLI)
         Me.GroupBox2.Controls.Add(Me.TextBoxCidadeCLi)
@@ -526,6 +517,19 @@ Partial Class frmCliente
         Me.GroupBox2.TabIndex = 55
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Endereço:"
+        '
+        'ComboBoxUF
+        '
+        Me.ComboBoxUF.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ComboBoxUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxUF.DropDownWidth = 99
+        Me.ComboBoxUF.Enabled = False
+        Me.ComboBoxUF.FormattingEnabled = True
+        Me.ComboBoxUF.Items.AddRange(New Object() {"AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF"})
+        Me.ComboBoxUF.Location = New System.Drawing.Point(269, 225)
+        Me.ComboBoxUF.Name = "ComboBoxUF"
+        Me.ComboBoxUF.Size = New System.Drawing.Size(99, 30)
+        Me.ComboBoxUF.TabIndex = 54
         '
         'GroupBox3
         '
@@ -681,7 +685,6 @@ Partial Class frmCliente
     Friend WithEvents btn_Editar As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents X As Button
-    Friend WithEvents TextBoxUfCli As TextBox
     Friend WithEvents TextBoxComplementoCli As TextBox
     Friend WithEvents TextBoxNumCli As TextBox
     Friend WithEvents TextBoxBairroCli As TextBox
@@ -719,4 +722,5 @@ Partial Class frmCliente
     Friend WithEvents btn_Relatório As Button
     Friend WithEvents btn_Pesquisar As Button
     Friend WithEvents btn_Atualizar As Button
+    Friend WithEvents ComboBoxUF As ComboBox
 End Class

@@ -190,7 +190,7 @@ Public Class frmPCliente
             frmCliente.TextBoxEMAILCLI.Text = email_c
             frmCliente.TextBoxLogradouroCLI.Text = logradouro_c
             frmCliente.TextBoxCidadeCLi.Text = cidade_c
-            frmCliente.TextBoxUfCli.Text = estado_c
+            frmCliente.ComboBoxUF.Text = estado_c
             frmCliente.TextBoxComplementoCli.Text = complemento_c
             frmCliente.MaskedTextBoxCEPCLI.Text = cep_c
             frmCliente.TextBoxNumCli.Text = numero_c
@@ -264,7 +264,7 @@ Public Class frmPCliente
             frmCliente.TextBoxEMAILCLI.Text = email_c
             frmCliente.TextBoxLogradouroCLI.Text = logradouro_c
             frmCliente.TextBoxCidadeCLi.Text = cidade_c
-            frmCliente.TextBoxUfCli.Text = estado_c
+            frmCliente.ComboBoxUF.Text = estado_c
             frmCliente.TextBoxComplementoCli.Text = complemento_c
             frmCliente.MaskedTextBoxCEPCLI.Text = cep_c
             frmCliente.TextBoxNumCli.Text = numero_c

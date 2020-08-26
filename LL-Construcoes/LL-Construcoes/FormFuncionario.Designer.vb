@@ -49,7 +49,7 @@ Partial Class frmFuncionario
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBoxUFFunc = New System.Windows.Forms.TextBox()
+        Me.ComboBoxUF = New System.Windows.Forms.ComboBox()
         Me.TextBoxCidadeFunc = New System.Windows.Forms.TextBox()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
@@ -448,7 +448,7 @@ Partial Class frmFuncionario
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBoxUFFunc)
+        Me.GroupBox2.Controls.Add(Me.ComboBoxUF)
         Me.GroupBox2.Controls.Add(Me.TextBoxCidadeFunc)
         Me.GroupBox2.Controls.Add(Me.Label53)
         Me.GroupBox2.Controls.Add(Me.Label52)
@@ -470,14 +470,18 @@ Partial Class frmFuncionario
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Endereço:"
         '
-        'TextBoxUFFunc
+        'ComboBoxUF
         '
-        Me.TextBoxUFFunc.Enabled = False
-        Me.TextBoxUFFunc.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUFFunc.Location = New System.Drawing.Point(282, 222)
-        Me.TextBoxUFFunc.Name = "TextBoxUFFunc"
-        Me.TextBoxUFFunc.Size = New System.Drawing.Size(77, 26)
-        Me.TextBoxUFFunc.TabIndex = 19
+        Me.ComboBoxUF.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ComboBoxUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxUF.DropDownWidth = 99
+        Me.ComboBoxUF.Enabled = False
+        Me.ComboBoxUF.FormattingEnabled = True
+        Me.ComboBoxUF.Items.AddRange(New Object() {"AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF"})
+        Me.ComboBoxUF.Location = New System.Drawing.Point(282, 222)
+        Me.ComboBoxUF.Name = "ComboBoxUF"
+        Me.ComboBoxUF.Size = New System.Drawing.Size(99, 30)
+        Me.ComboBoxUF.TabIndex = 66
         '
         'TextBoxCidadeFunc
         '
@@ -956,7 +960,6 @@ Partial Class frmFuncionario
     Friend WithEvents Label33 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBoxUFFunc As TextBox
     Friend WithEvents TextBoxCidadeFunc As TextBox
     Friend WithEvents Label53 As Label
     Friend WithEvents Label52 As Label
@@ -1003,4 +1006,5 @@ Partial Class frmFuncionario
     Friend WithEvents btn_Pesquisar As Button
     Friend WithEvents btn_Atualizar As Button
     Friend WithEvents ButtonAddFoto As Button
+    Friend WithEvents ComboBoxUF As ComboBox
 End Class

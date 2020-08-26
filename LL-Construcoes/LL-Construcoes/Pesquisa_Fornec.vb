@@ -205,7 +205,7 @@ Public Class frmPFornec
             frmFornecedores.TextBoxCompleForn.Text = complemento_f
             frmFornecedores.MaskedTextBoxCEPForn.Text = cep_f
             frmFornecedores.TextBoxCidadeForn.Text = cidade_f
-            frmFornecedores.TextBoxUfForn.Text = estado_f
+            frmFornecedores.ComboBoxUF.Text = estado_f
             frmFornecedores.ComboBoxBancoForn.Text = banco_f
             frmFornecedores.TextBoxAgenciaForn.Text = agencia_f
             frmFornecedores.TextBoxContaBancoForn.Text = conta_f
@@ -293,7 +293,7 @@ Public Class frmPFornec
             frmFornecedores.TextBoxCompleForn.Text = complemento_f
             frmFornecedores.MaskedTextBoxCEPForn.Text = cep_f
             frmFornecedores.TextBoxCidadeForn.Text = cidade_f
-            frmFornecedores.TextBoxUfForn.Text = estado_f
+            frmFornecedores.ComboBoxUF.Text = estado_f
             frmFornecedores.ComboBoxBancoForn.Text = banco_f
             frmFornecedores.TextBoxAgenciaForn.Text = agencia_f
             frmFornecedores.TextBoxContaBancoForn.Text = conta_f

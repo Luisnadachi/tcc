@@ -4,8 +4,8 @@ Public Class frmBackup
     Private Sub X_Click(sender As Object, e As EventArgs) Handles X.Click
         If MessageBox.Show("Deseja realmente sair?", "Fechar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = System.Windows.Forms.DialogResult.Yes Then
             Me.Close()
-            frmLogin.Refresh()
-            frmLogin.Visible = True
+            frmMenu.Refresh()
+            frmMenu.Visible = True
         End If
     End Sub
 

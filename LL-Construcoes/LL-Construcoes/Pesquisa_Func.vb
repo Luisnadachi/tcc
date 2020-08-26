@@ -232,7 +232,7 @@ Public Class frmPFunc
             frmFuncionario.TextBoxCompleFunc.Text = complemento_func
             frmFuncionario.MaskedTextBoxCEPFunc.Text = cep_func
             frmFuncionario.TextBoxCidadeFunc.Text = cidade_func
-            frmFuncionario.TextBoxUFFunc.Text = uf_func
+            frmFuncionario.ComboBoxUF.Text = uf_func
             frmFuncionario.ComboBoxBancoFunc.Text = banco_func
             frmFuncionario.TextBoxAgenciaFunc.Text = agencia_func
             frmFuncionario.TextBoxContaBancoFunc.Text = conta_func
@@ -347,7 +347,7 @@ Public Class frmPFunc
             frmFuncionario.TextBoxCompleFunc.Text = complemento_func
             frmFuncionario.MaskedTextBoxCEPFunc.Text = cep_func
             frmFuncionario.TextBoxCidadeFunc.Text = cidade_func
-            frmFuncionario.TextBoxUFFunc.Text = uf_func
+            frmFuncionario.ComboBoxUF.Text = uf_func
             frmFuncionario.ComboBoxBancoFunc.Text = banco_func
             frmFuncionario.TextBoxAgenciaFunc.Text = agencia_func
             frmFuncionario.TextBoxContaBancoFunc.Text = conta_func
