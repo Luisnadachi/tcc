@@ -63,7 +63,7 @@ Public Class frmCarrinho
         tbTroco.Text = ""
         tbPreco.Text = ""
         tbestoque.Text = ""
-        cbFormaPagamentoVenda.Text = ""
+        cbFormaPagamentoVenda.Text = Nothing
         PictureBoxProd.Image = Nothing
     End Sub
 
@@ -125,11 +125,8 @@ Public Class frmCarrinho
 
     Private Sub frmCarrinho_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Enter Then
-            debitaestoque()
-            Total_produto()
-            DgvProdutosVenda.Rows.Add(tbProduto.Text, tbquantidade.Text, tbTotalProd.Text, "X")
-            SomarValor()
-            tbquantidade.Text = ""
+            Verificarquantidade()
+
         End If
     End Sub
 
@@ -381,5 +378,24 @@ Public Class frmCarrinho
     Sub buscarDataHora()
         lblData.Text = Now.ToShortDateString
         lblHora.Text = Now.ToShortTimeString
+    End Sub
+
+    Sub Verificarquantidade()
+        Dim qntEstoque As Integer
+        Dim qntCarrinho As Integer
+
+        qntEstoque = tbestoque.Text
+        qntCarrinho = tbquantidade.Text
+
+        If qntCarrinho > qntEstoque Then
+            MsgBox("Quantidade insuficiente no estoque!")
+            tbquantidade.Text = ""
+        Else
+            debitaestoque()
+            Total_produto()
+            DgvProdutosVenda.Rows.Add(tbProduto.Text, tbquantidade.Text, tbTotalProd.Text, "X")
+            SomarValor()
+            tbquantidade.Text = ""
+        End If
     End Sub
 End Class

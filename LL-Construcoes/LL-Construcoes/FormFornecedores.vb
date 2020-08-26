@@ -68,7 +68,7 @@ Public Class frmFornecedores
         TextBoxAgenciaForn.Text = ""
         TextBoxContaBancoForn.Text = ""
         TextBoxOperacaoBancoForn.Text = ""
-        ComboBoxBancoForn.Text = ""
+        ComboBoxBancoForn.Text = Nothing
     End Sub
 
     Private Sub btn_Novo_Click(sender As Object, e As EventArgs) Handles btn_Novo.Click
@@ -192,6 +192,7 @@ Public Class frmFornecedores
         PanelSelect.Visible = True
         frmPFornec.Show()
         desabilitar()
+        limpar()
         btn_Editar.Enabled = True
         btn_Salvar.Enabled = False
     End Sub

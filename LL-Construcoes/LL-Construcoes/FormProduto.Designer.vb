@@ -208,6 +208,7 @@ Partial Class frmProduto
         '
         'ComboBoxSubCategoriaProd
         '
+        Me.ComboBoxSubCategoriaProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSubCategoriaProd.Enabled = False
         Me.ComboBoxSubCategoriaProd.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSubCategoriaProd.FormattingEnabled = True
@@ -219,6 +220,7 @@ Partial Class frmProduto
         '
         'ComboBoxCategoriaProd
         '
+        Me.ComboBoxCategoriaProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCategoriaProd.Enabled = False
         Me.ComboBoxCategoriaProd.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCategoriaProd.FormattingEnabled = True

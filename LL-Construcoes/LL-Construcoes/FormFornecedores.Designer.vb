@@ -104,6 +104,7 @@ Partial Class frmFornecedores
         '
         'ComboBoxBancoForn
         '
+        Me.ComboBoxBancoForn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxBancoForn.Enabled = False
         Me.ComboBoxBancoForn.FormattingEnabled = True
         Me.ComboBoxBancoForn.Items.AddRange(New Object() {"Bradesco", "Caixa", "Itaú", "Santander"})

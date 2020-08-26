@@ -792,6 +792,7 @@ Partial Class frmFuncionario
         '
         'ComboBoxBancoFunc
         '
+        Me.ComboBoxBancoFunc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxBancoFunc.Enabled = False
         Me.ComboBoxBancoFunc.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxBancoFunc.FormattingEnabled = True
@@ -819,6 +820,7 @@ Partial Class frmFuncionario
         '
         'ComboBoxCargoFunc
         '
+        Me.ComboBoxCargoFunc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCargoFunc.Enabled = False
         Me.ComboBoxCargoFunc.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCargoFunc.FormattingEnabled = True

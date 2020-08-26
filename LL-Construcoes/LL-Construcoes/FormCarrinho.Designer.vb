@@ -130,6 +130,7 @@ Partial Class frmCarrinho
         '
         'cbFormaPagamentoVenda
         '
+        Me.cbFormaPagamentoVenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFormaPagamentoVenda.Enabled = False
         Me.cbFormaPagamentoVenda.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbFormaPagamentoVenda.FormattingEnabled = True
@@ -805,6 +806,7 @@ Partial Class frmCarrinho
         Me.lblHora.Size = New System.Drawing.Size(56, 13)
         Me.lblHora.TabIndex = 115
         Me.lblHora.Text = "LabelHora"
+        Me.lblHora.Visible = False
         '
         'frmCarrinho
         '

@@ -73,7 +73,7 @@ Public Class frmFuncionario
         MaskedTextBoxCEL1Func.Text = ""
         TextBoxLoginFunc.Text = ""
         TextBoxSenhaFunc.Text = ""
-        ComboBoxCargoFunc.Text = ""
+        ComboBoxCargoFunc.Text = Nothing
         TextBoxLogradouroFunc.Text = ""
         TextBoxNUmENDFunc.Text = ""
         TextBoxBairroFunc.Text = ""
@@ -81,7 +81,7 @@ Public Class frmFuncionario
         MaskedTextBoxCEPFunc.Text = ""
         TextBoxCidadeFunc.Text = ""
         TextBoxUFFunc.Text = ""
-        ComboBoxBancoFunc.Text = ""
+        ComboBoxBancoFunc.Text = Nothing
         TextBoxAgenciaFunc.Text = ""
         TextBoxContaBancoFunc.Text = ""
         TextBoxOperacaoBancoFunc.Text = ""
@@ -277,6 +277,7 @@ Public Class frmFuncionario
         PanelSelect.Visible = True
         frmPFunc.Show()
         desabilitar()
+        limpar()
         btn_Editar.Enabled = True
         btn_Salvar.Enabled = False
     End Sub

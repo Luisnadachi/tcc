@@ -42,8 +42,8 @@ Public Class frmProduto
         TextBoxCorProd.Text = ""
         TextBoxPrecoProd.Text = ""
         TextBoxEstoqueProd.Text = ""
-        ComboBoxCategoriaProd.Text = ""
-        ComboBoxSubCategoriaProd.Text = ""
+        ComboBoxCategoriaProd.Text = Nothing
+        ComboBoxSubCategoriaProd.Text = Nothing
         TextBoxDescricaoProd.Text = ""
         TextBoxIdProd.Text = ""
         TextBoxFornProd.Text = ""
@@ -65,7 +65,7 @@ Public Class frmProduto
     Private Sub btn_Salvar_Click(sender As Object, e As EventArgs) Handles btn_Salvar.Click
         PanelSelect.Location = New Point(0, 250)
         PanelSelect.Visible = True
-        If TextBoxNomeProd.Text = "" Or TextBoxMarcaProd.Text = "" Or TextBoxCorProd.Text = "" Or TextBoxPrecoProd.Text = "" Or TextBoxEstoqueProd.Text = "" Or ComboBoxCategoriaProd.Text = "" Or ComboBoxSubCategoriaProd.Text = "" Or TextBoxDescricaoProd.Text = "" Or TextBoxFornProd.Text = "" Then
+        If TextBoxNomeProd.Text = "" Or TextBoxMarcaProd.Text = "" Or TextBoxPrecoProd.Text = "" Or TextBoxEstoqueProd.Text = "" Or ComboBoxCategoriaProd.Text = "" Or ComboBoxSubCategoriaProd.Text = "" Or TextBoxDescricaoProd.Text = "" Or TextBoxFornProd.Text = "" Then
             MessageBox.Show("Preencha todos os campos!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information)
             TextBoxNomeProd.Focus()
 
@@ -244,6 +244,7 @@ Public Class frmProduto
         PanelSelect.Visible = True
         frmPProduto.Show()
         desabilitar()
+        limpar()
         btn_Editar.Enabled = True
         btn_Salvar.Enabled = False
     End Sub
