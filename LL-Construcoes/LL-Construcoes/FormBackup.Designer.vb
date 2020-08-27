@@ -39,7 +39,7 @@ Partial Class frmBackup
         '
         'Panel_Backup
         '
-        Me.Panel_Backup.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Backup.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Backup.Controls.Add(Me.PictureBox5)
         Me.Panel_Backup.Controls.Add(Me.Label3)
         Me.Panel_Backup.Cursor = System.Windows.Forms.Cursors.Hand
@@ -97,7 +97,7 @@ Partial Class frmBackup
         '
         'PanelRestaurarBackup
         '
-        Me.PanelRestaurarBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.PanelRestaurarBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.PanelRestaurarBackup.Controls.Add(Me.PictureBox7)
         Me.PanelRestaurarBackup.Controls.Add(Me.Label7)
         Me.PanelRestaurarBackup.Cursor = System.Windows.Forms.Cursors.Hand

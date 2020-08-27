@@ -75,7 +75,7 @@ Partial Class frmMenu
         '
         'Panel_Cliente
         '
-        Me.Panel_Cliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Cliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Cliente.Controls.Add(Me.PictureBox1)
         Me.Panel_Cliente.Controls.Add(Me.Label1)
         Me.Panel_Cliente.Cursor = System.Windows.Forms.Cursors.Hand
@@ -107,11 +107,11 @@ Partial Class frmMenu
         '
         'Panel_Fornec
         '
-        Me.Panel_Fornec.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Fornec.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Fornec.Controls.Add(Me.PictureBox4)
         Me.Panel_Fornec.Controls.Add(Me.Label2)
         Me.Panel_Fornec.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Fornec.Location = New System.Drawing.Point(780, 38)
+        Me.Panel_Fornec.Location = New System.Drawing.Point(268, 194)
         Me.Panel_Fornec.Name = "Panel_Fornec"
         Me.Panel_Fornec.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Fornec.TabIndex = 13
@@ -139,11 +139,11 @@ Partial Class frmMenu
         '
         'Panel_Produto
         '
-        Me.Panel_Produto.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Produto.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Produto.Controls.Add(Me.PictureBox2)
         Me.Panel_Produto.Controls.Add(Me.Label4)
         Me.Panel_Produto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Produto.Location = New System.Drawing.Point(268, 194)
+        Me.Panel_Produto.Location = New System.Drawing.Point(524, 194)
         Me.Panel_Produto.Name = "Panel_Produto"
         Me.Panel_Produto.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Produto.TabIndex = 15
@@ -171,7 +171,7 @@ Partial Class frmMenu
         '
         'Panel_Func
         '
-        Me.Panel_Func.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Func.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Func.Controls.Add(Me.PictureBox3)
         Me.Panel_Func.Controls.Add(Me.Label5)
         Me.Panel_Func.Cursor = System.Windows.Forms.Cursors.Hand
@@ -203,11 +203,11 @@ Partial Class frmMenu
         '
         'Panel_Carrinho
         '
-        Me.Panel_Carrinho.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Carrinho.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Carrinho.Controls.Add(Me.PictureBox6)
         Me.Panel_Carrinho.Controls.Add(Me.Label6)
         Me.Panel_Carrinho.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Carrinho.Location = New System.Drawing.Point(780, 194)
+        Me.Panel_Carrinho.Location = New System.Drawing.Point(268, 350)
         Me.Panel_Carrinho.Name = "Panel_Carrinho"
         Me.Panel_Carrinho.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Carrinho.TabIndex = 17
@@ -240,7 +240,7 @@ Partial Class frmMenu
         Me.X.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.X.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.X.ForeColor = System.Drawing.Color.White
-        Me.X.Location = New System.Drawing.Point(998, 2)
+        Me.X.Location = New System.Drawing.Point(743, 2)
         Me.X.Margin = New System.Windows.Forms.Padding(0)
         Me.X.Name = "X"
         Me.X.Size = New System.Drawing.Size(30, 30)
@@ -250,11 +250,11 @@ Partial Class frmMenu
         '
         'Panel_Backup
         '
-        Me.Panel_Backup.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Panel_Backup.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel_Backup.Controls.Add(Me.PictureBox5)
         Me.Panel_Backup.Controls.Add(Me.Label3)
         Me.Panel_Backup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel_Backup.Location = New System.Drawing.Point(524, 194)
+        Me.Panel_Backup.Location = New System.Drawing.Point(524, 350)
         Me.Panel_Backup.Name = "Panel_Backup"
         Me.Panel_Backup.Size = New System.Drawing.Size(250, 150)
         Me.Panel_Backup.TabIndex = 17
@@ -312,7 +312,7 @@ Partial Class frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1038, 359)
+        Me.ClientSize = New System.Drawing.Size(782, 507)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel_Backup)
         Me.Controls.Add(Me.Panel2)

@@ -59,6 +59,7 @@ Public Class frmCarrinho
         tbSubTotalVendas.Text = ""
         tbDescontoVenda.Text = ""
         tbTotalCompra.Text = ""
+        tbCliente.Text = ""
         tbValorReceb.Text = ""
         tbTroco.Text = ""
         tbPreco.Text = ""
@@ -83,8 +84,30 @@ Public Class frmCarrinho
         PanelSelect.Location = New Point(0, 266)
         PanelSelect.Visible = True
         BuscarIdFunc()
-        AddVendaFunc()
-        MsgBox("Venda Finalizada!")
+        abrir()
+        Try
+            Dim cmd As OleDbCommand
+            Dim sql As String
+
+            sql = ("INSERT INTO Vendas (id_Funcionario_Venda, nome_Cliente_Venda, id_Produto_Venda, unidade_Produto_Venda, sub_Total_Venda, forma_Pagamento_Venda, desconto_Venda, total_Venda, data_Venda, hora_Venda) VALUES ('" & idFuncVenda & "', '" & tbCliente.Text & "', '" & tbCodProduto.Text & "', '" & tbquantidade.Text & "', '" & tbSubTotalVendas.Text & "', '" & cbFormaPagamentoVenda.Text & "', '" & tbDescontoVenda.Text & "', '" & tbTotalCompra.Text & "', '" & lblData.Text & "', '" & lblHora.Text & "')")
+
+            cmd = New OleDbCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+            MessageBox.Show("Venda realizada com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            fechar()
+            desabilitar()
+            limpar()
+            AddVendaFunc()
+            btn_Nova.Enabled = True
+            btn_Finalizar.Enabled = False
+            btn_Cancelar.Enabled = False
+            btn_Pesquisar.Enabled = True
+            btn_Relatório.Enabled = True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            fechar()
+        End Try
     End Sub
 
     Private Sub btn_Cancelar_Click(sender As Object, e As EventArgs) Handles btn_Cancelar.Click
@@ -372,9 +395,6 @@ Public Class frmCarrinho
         End If
     End Sub
 
-    ''' <summary>
-    ''' 
-    ''' </summary>
     Sub buscarDataHora()
         lblData.Text = Now.ToShortDateString
         lblHora.Text = Now.ToShortTimeString
