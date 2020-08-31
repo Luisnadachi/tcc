@@ -89,7 +89,7 @@ Public Class frmCarrinho
             Dim cmd As OleDbCommand
             Dim sql As String
 
-            sql = ("INSERT INTO Vendas (id_Funcionario_Venda, nome_Cliente_Venda, id_Produto_Venda, unidade_Produto_Venda, sub_Total_Venda, forma_Pagamento_Venda, desconto_Venda, total_Venda, data_Venda, hora_Venda) VALUES ('" & idFuncVenda & "', '" & tbCliente.Text & "', '" & tbCodProduto.Text & "', '" & tbquantidade.Text & "', '" & tbSubTotalVendas.Text & "', '" & cbFormaPagamentoVenda.Text & "', '" & tbDescontoVenda.Text & "', '" & tbTotalCompra.Text & "', '" & lblData.Text & "', '" & lblHora.Text & "')")
+            sql = ("INSERT INTO Vendas (id_Funcionario_Venda, nome_Cliente_Venda, sub_Total_Venda, forma_Pagamento_Venda, desconto_Venda, total_Venda, data_Venda, hora_Venda) VALUES ('" & idFuncVenda & "', '" & tbCliente.Text & "', '" & tbSubTotalVendas.Text & "', '" & cbFormaPagamentoVenda.Text & "', '" & tbDescontoVenda.Text & "', '" & tbTotalCompra.Text & "', '" & lblData.Text & "', '" & lblHora.Text & "')")
 
             cmd = New OleDbCommand(sql, con)
             cmd.ExecuteNonQuery()
@@ -149,7 +149,6 @@ Public Class frmCarrinho
     Private Sub frmCarrinho_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Enter Then
             Verificarquantidade()
-
         End If
     End Sub
 
@@ -370,9 +369,9 @@ Public Class frmCarrinho
 
     Private Sub DgvProdutosVenda_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvProdutosVenda.CellContentClick
         If DgvProdutosVenda.CurrentCell.Value.ToString = "X" Then
-
             AtualizarEstoqueProdutoCancelado()
             DgvProdutosVenda.Rows.RemoveAt(DgvProdutosVenda.CurrentRow.Index)
+            SomarValor()
         End If
     End Sub
 
@@ -397,6 +396,25 @@ Public Class frmCarrinho
             DgvProdutosVenda.Rows.Add(tbProduto.Text, tbquantidade.Text, tbTotalProd.Text, "X")
             SomarValor()
             tbquantidade.Text = ""
+        End If
+    End Sub
+
+    Private Sub cbFormaPagamentoVenda_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbFormaPagamentoVenda.SelectedValueChanged
+        Dim valor_total As String
+        Dim desconto As String
+        Dim valor_desconto As String
+
+        valor_total = tbTotalCompra.Text
+
+        If cbFormaPagamentoVenda.Text = "Dinheiro" Then
+            desconto = valor_total * 0.15
+            valor_desconto = valor_total - desconto
+            tbDescontoVenda.Text = FormatCurrency(desconto)
+            tbTotalCompra.Text = FormatCurrency(valor_desconto)
+        ElseIf cbFormaPagamentoVenda.Text = "Cartão de crédito" Then
+            desconto = "0.00"
+            tbDescontoVenda.Text = FormatCurrency(desconto)
+            tbTotalCompra.Text = FormatCurrency(tbSubTotalVendas.Text)
         End If
     End Sub
 End Class
