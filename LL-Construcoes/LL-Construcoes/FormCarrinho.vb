@@ -190,25 +190,6 @@ Public Class frmCarrinho
         tbTroco.Text = FormatCurrency(troco)
     End Sub
 
-    Private Sub cbFormaPagamentoVenda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPagamentoVenda.SelectedIndexChanged
-        Dim valor_total As Double
-        Dim desconto As Double
-        Dim valor_desconto As Double
-
-        valor_total = tbTotalCompra.Text
-
-        If cbFormaPagamentoVenda.Text = "Dinheiro" Then
-            desconto = valor_total * 0.15
-            valor_desconto = valor_total - desconto
-            tbDescontoVenda.Text = FormatCurrency(desconto)
-            tbTotalCompra.Text = FormatCurrency(valor_desconto)
-        ElseIf cbFormaPagamentoVenda.Text = "Cartão de crédito" Then
-            desconto = "0.00"
-            tbDescontoVenda.Text = FormatCurrency(desconto)
-            tbTotalCompra.Text = FormatCurrency(tbSubTotalVendas.Text)
-        End If
-    End Sub
-
     Public Sub debitaestoque() 'Debita do estoque a quantidade de produtos escolhida na compra
         Dim cmd As OleDbCommand
         Dim sql As String

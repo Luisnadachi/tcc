@@ -87,7 +87,6 @@ Partial Class frmCarrinho
         Me.btnCliente = New System.Windows.Forms.Button()
         Me.lblData = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         CType(Me.DgvProdutosVenda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -809,20 +808,11 @@ Partial Class frmCarrinho
         Me.lblHora.Text = "LabelHora"
         Me.lblHora.Visible = False
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(467, 673)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(54, 69)
-        Me.ListBox1.TabIndex = 116
-        '
         'frmCarrinho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1448, 900)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.lblData)
         Me.Controls.Add(Me.btnProcurarProd)
@@ -967,5 +957,4 @@ Partial Class frmCarrinho
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents lblData As Label
     Friend WithEvents lblHora As Label
-    Friend WithEvents ListBox1 As ListBox
 End Class
