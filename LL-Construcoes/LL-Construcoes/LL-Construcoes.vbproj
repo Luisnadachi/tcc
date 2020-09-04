@@ -49,6 +49,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -128,6 +140,17 @@
     </Compile>
     <Compile Include="FormProduto.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Imprimir.Designer.vb">
+      <DependentUpon>Form_Imprimir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Imprimir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LLConstrucoesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LLConstrucoesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Pesquisa_Cliente2.Designer.vb">
       <DependentUpon>Pesquisa_Cliente2.vb</DependentUpon>
@@ -211,6 +234,9 @@
     <EmbeddedResource Include="FormProduto.resx">
       <DependentUpon>FormProduto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Imprimir.resx">
+      <DependentUpon>Form_Imprimir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -235,8 +261,20 @@
     <EmbeddedResource Include="Pesquisa_Produto.resx">
       <DependentUpon>Pesquisa_Produto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LLConstrucoesDataSet.xsc">
+      <DependentUpon>LLConstrucoesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LLConstrucoesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LLConstrucoesDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LLConstrucoesDataSet.xss">
+      <DependentUpon>LLConstrucoesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -249,6 +287,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\02.png" />
   </ItemGroup>
   <ItemGroup>
@@ -299,6 +338,20 @@
   <ItemGroup>
     <Content Include="LLConstrucoes.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\icons8-backup-de-dados-80.png" />
   </ItemGroup>

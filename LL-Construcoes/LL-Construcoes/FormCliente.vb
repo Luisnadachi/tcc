@@ -196,6 +196,7 @@ Public Class frmCliente
     Private Sub btn_Relatório_Click(sender As Object, e As EventArgs) Handles btn_Relatório.Click
         PanelSelect.Location = New Point(0, 655)
         PanelSelect.Visible = True
+
     End Sub
 
     Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -203,5 +204,9 @@ Public Class frmCliente
         btn_Editar.Enabled = False
         btn_Excluir.Enabled = False
         btn_Atualizar.Enabled = False
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form_Imprimir.Show()
     End Sub
 End Class

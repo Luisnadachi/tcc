@@ -68,6 +68,7 @@ Partial Class frmCliente
         Me.TextBoxNomeCLI = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -644,12 +645,22 @@ Partial Class frmCliente
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dados Pessoais:"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1018, 485)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 56
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1448, 753)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -723,4 +734,5 @@ Partial Class frmCliente
     Friend WithEvents btn_Pesquisar As Button
     Friend WithEvents btn_Atualizar As Button
     Friend WithEvents ComboBoxUF As ComboBox
+    Friend WithEvents Button1 As Button
 End Class
